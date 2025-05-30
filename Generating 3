@@ -1,0 +1,17 @@
+from sympy import symbols, simplify, init_printing
+
+# Initialize pretty printing
+init_printing()
+
+# Define the variable x
+x = symbols('x')
+
+# Define the generating function components
+Gx = 2 / (1 - x) + 3 * x / (1 - x)**2
+
+# Simplify the expression (combine into one fraction)
+Gx_simplified = simplify(Gx)
+
+# Print the result
+print("Closed-form generating function G(x) for a_n = 2 + 3n is:")
+print(Gx_simplified)
