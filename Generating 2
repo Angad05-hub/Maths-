@@ -1,0 +1,14 @@
+from sympy import symbols, simplify
+
+#Define the variable x
+x = symbols('x')
+
+#Define the closed-form generating function G(x) for a_n = n^2
+G_x = (x * (1 + x)) / (1 - x)**3
+
+#simplify the expression (though it's already in its simplest form)
+G_x_simplified = simplify(G_x)
+
+#print the result
+print("closed-form generating function G(x) for a_n = n^2 is:")
+print(G_x_simplified)
