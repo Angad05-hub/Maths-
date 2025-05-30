@@ -1,0 +1,31 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Data
+x = np.array([2, 3, 4, 5, 6])
+y = np.array([144, 172.8, 207.4, 248.8, 298.5])
+
+# Linearizing the equation y = a * b^x
+log_y = np.log(y)  # Take the natural logarithm of y
+coeffs = np.polyfit(x, log_y, 1)  # Fit linear model
+log_b = coeffs[0]
+log_a = coeffs[1]
+a = np.exp(log_a)  # Convert log(a) back to a
+b = np.exp(log_b)  # Convert log(b) back to b
+
+# Print coefficients
+print(f"Fitted curve: y = ({a:.2f}) * ({b:.2f})^x")
+
+# Plotting the data points
+plt.scatter(x, y, label="Data", color="blue")
+
+# Plot fitted curve
+x_values = np.linspace(min(x), max(x), 100)
+y_fitted = a * (b ** x_values)
+plt.plot(x_values, y_fitted, color="orange", label="Fitted curve")
+
+plt.legend()
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.title("Fitting y = a * b^x")
+plt.show()
