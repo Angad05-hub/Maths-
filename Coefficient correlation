@@ -1,0 +1,13 @@
+#import
+import numpy as np
+
+#data
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 5, 4, 5]
+
+#calculate correlation coefficient matrix
+correlation_matrix = np.corrcoef(x, y)
+
+#extract the coefficient of correlation
+correlation_xy = correlation_matrix[0, 1]
+print("correlation coefficient", correlation_xy)
