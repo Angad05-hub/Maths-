@@ -1,0 +1,14 @@
+from sympy import symbols, simplify
+
+# define the variable x
+x = symbols('x')
+
+# define the closed-form generating function G(x) for a_n = 3 + n
+G_x = 3 / (1 - x) + x / (1 - x)**2
+
+# simplify the expression
+G_x_simplified = simplify(G_x)
+
+# print the result
+print("closed-form generating function G(x) for a_n = 3 + n is:")
+print(G_x_simplified)
